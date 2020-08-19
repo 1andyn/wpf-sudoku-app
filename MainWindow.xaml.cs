@@ -22,7 +22,33 @@ namespace wpf_sudoku_app
     {
         public MainWindow()
         {
+            Button btnPlay = new Button();
+            Button btnSolve = new Button();
+            btnPlay.Name = "btnPlay";
+            btnSolve.Name = "btnSolve";
+
+            btnPlay.Click += btnPlay_Click;
+            btnSolve.Click += btnSolve_Click;
+
             InitializeComponent();
         }
+
+
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            // do something
+        }
+
+        private void btnSolve_Click(object sender, RoutedEventArgs e)
+        {
+            // do something
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
     }
 }

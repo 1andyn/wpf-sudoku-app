@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sudoku_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize"
+        >
     <Grid>
-        
+        <Rectangle>
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#9B7CF4" Offset="0.0" />
+                    <GradientStop Color="#6CA9EA" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Margin="190,35,0,0" TextWrapping="Wrap" Text="Sudoku App" VerticalAlignment="Top" Height="103" Width="420" FontSize="72" Cursor="None" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="290,285,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btnSolve" Content="Solver" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="290,415,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold" Click="btnExit_Click"/>
     </Grid>
 </Window>
