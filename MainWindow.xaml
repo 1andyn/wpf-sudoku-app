@@ -11,14 +11,92 @@
         <Rectangle>
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#9B7CF4" Offset="0.0" />
+                    <GradientStop Color="#FFAA8DFF" Offset="0.0" />
                     <GradientStop Color="#6CA9EA" Offset="1.0" />
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" Margin="190,35,0,0" TextWrapping="Wrap" Text="Sudoku App" VerticalAlignment="Top" Height="103" Width="420" FontSize="72" Cursor="None" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="290,285,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnSolve" Content="Solver" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="290,415,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" FontWeight="Bold" Click="btnExit_Click"/>
+        <Grid x:Name="gridMainMenu">
+            <TextBlock HorizontalAlignment="Left" Margin="190,85,0,0" TextWrapping="Wrap" Text="Sudoku App" VerticalAlignment="Top" Height="103" Width="420" FontSize="72" Cursor="None" FontWeight="Bold" Foreground="White">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#FF2B2B2B" ShadowDepth="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="290,285,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" Click="btnPlay_Click" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7B93E4" Offset="0"/>
+                        <GradientStop Color="#FFBFA7E2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnSolve" Content="Solver" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" Click="btnSolve_Click" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7B93E4" Offset="0"/>
+                        <GradientStop Color="#FFBFA7E2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="290,415,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="24" Click="btnExit_Click" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7B93E4" Offset="0"/>
+                        <GradientStop Color="#FFBFA7E2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid x:Name="gridGameScreen" Margin="0,0,0,0" Visibility="Hidden">
+            <Grid x:Name="gridGameDiff" Margin="0,0,600,0">
+                <Button Content="Easy" HorizontalAlignment="Left" Margin="23,225,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20" Click="btnDiff_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Medium" HorizontalAlignment="Left" Margin="23,275,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20"  Click="btnDiff_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Hard" HorizontalAlignment="Left" Margin="23,325,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20"  Click="btnDiff_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Grid x:Name="gridGameControl" Margin="0,0,600,0">
+                <Button Content="Hint" HorizontalAlignment="Left" Margin="23,225,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Give Up" HorizontalAlignment="Left" Margin="23,275,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Menu" HorizontalAlignment="Left" Margin="23,325,0,0" VerticalAlignment="Top" Width="148" Height="28" Background="White" FontSize="20">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Grid x:Name="gridGameBoard" Margin="199,0,0,0">
+                
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
